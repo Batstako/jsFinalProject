@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Contacts</title>
+	<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/contacts.css">
+
+</head>
+<body>
+	<div class="container jumbotron" id="mainContainer">
+		<nav id="navigationBar">
+			<ul class="nav nav-pills nav-justified">
+				<li role="presentation" ><a href="index.html">Home</a></li>
+				<li role="presentation" ><a href="allBooks.html">All Books</a></li>
+				<li role="presentation" ><a href="#">Cart<span id="numberOrderedProducts" class="badge"></span><span id="OrderedSum" class="badge"></span></a></li>
+				<li role="presentation" class="active"><a href="contacts.html">Contacts</a></li>
+			</ul>
+		</nav>
+		<div>
+			<h5>Address:</h5>
+			<h6>Sofia City, "Liuliakova gradina" street, No:56</h6>
+			<h3>Map location</h3>
+			<h6 id="poiterText">Click on the pointer to see coordinates</h6>
+			<div id="map"></div>
+		</div>
+
+	</div>
+	<script>
+		function initMap() {
+			var mapDiv = document.getElementById('map');
+			var positionOfPoint = {lat: 42.671054, lng: 23.356141};
+			var contentInfoOfWindow = 'This is Bookstore JS shop Location' + '<br>' + 'Lat: ' + positionOfPoint.lat + '<br>' +'Lng: '+ positionOfPoint.lng;
+			var map = new google.maps.Map(mapDiv, {
+				center: positionOfPoint,
+				zoom: 17
+			});
+			var infoWindow = new google.maps.InfoWindow({
+				content: contentInfoOfWindow,
+				maxWidth: 200
+			})
+			var marker = new google.maps.Marker({
+				position: positionOfPoint,
+				map: map,
+				title: 'Bookstore JS'
+			})
+			marker.addListener('click', function () {
+				infoWindow.open(map, marker)
+			})
+		}
+	</script>
+	<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ2AfAzvQhUlVBc_TjMo2Jc7pCkjowq0M&callback=initMap">
+	</script>
+</body>
+</html>

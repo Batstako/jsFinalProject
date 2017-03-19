@@ -1,0 +1,40 @@
+#navigationBar ul li a:hover {
+	background:rgba(41, 21, 22, 0.25);
+	border-radius:5px;
+	box-sizing:border-box;
+	}
+#bookContainer {
+	border :1px solid black;
+	border-radius:5px;
+	margin-top:10px;
+	}
+#bookContainer .smallBookContainer {
+	border-bottom:1px solid black;
+	border-radius:5px;
+	margin:3px;
+	overflow:auto;
+	}
+#bookContainer div img {
+	float:left;
+	width:100px;
+	margin:3px 3px;
+	border-radius:5px;
+	}
+#bookContainer div p {
+	margin:0;
+	padding-left:110px;
+	font-size:14px;
+	}
+
+#bookContainer div button {
+	clear:both;
+	float:left;
+	margin:0px 0 3px 3px;
+	}
+.smallBookContainer1 img{
+	width:100px;
+	border: 3px solid black;
+	}
+#returnAllBooks {
+	margin:5px;
+	}

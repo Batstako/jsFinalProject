@@ -1,0 +1,20 @@
+#navigationBar ul li a:hover {
+	background:rgba(41, 21, 22, 0.25);
+	border-radius:5px;
+	box-sizing:border-box;
+	}
+.image-row {
+	border :1px solid black;
+	border-radius:5px;
+	margin-top:10px;
+	}
+.image-row a {
+	display:inline-block;
+	}
+.image-row a img {
+	float:left;
+	box-sizing:border-box;
+	width:100px;
+	margin:3px;
+	border-radius:5px;
+	}
